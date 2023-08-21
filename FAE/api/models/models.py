@@ -15,10 +15,12 @@ class Fire(BaseModel):
     """
 
     SIZE: int  
-    FUEL: str 
+    FUEL_gasoline: int
+    FUEL_lpg: int
+    FUEL_kerosene: int
     DISTANCE:  int 
     DESIBEL:  int  
     AIRFLOW:  float
     FREQUENCY:  int  
-    STATUS:  int  
+   
     

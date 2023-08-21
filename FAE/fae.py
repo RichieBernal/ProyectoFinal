@@ -21,16 +21,20 @@ TRAIN_DATA_FILE = DATASETS_DIR + 'train.csv'
 TEST_DATA_FILE  = DATASETS_DIR + 'test.csv'
 
 TARGET  = 'STATUS'
-FEATURES = ['SIZE','FUEL','DISTANCE','DESIBEL','AIRFLOW','FREQUENCY']
+FEATURES = ['SIZE',
+            'FUEL',
+            'DISTANCE','DESIBEL','AIRFLOW','FREQUENCY']
 CATEGORICAL_VARS = ['FUEL']
 NUMERICAL_VARS = ['SIZE','DISTANCE','DESIBEL','AIRFLOW','FREQUENCY']
 
 SEED_MODEL = 404
 
-SELECTED_FEATURES = ['SIZE','FUEL', 
+SELECTED_FEATURES = ['SIZE',
+                     'FUEL', 
                      #'FUEL_gasoline',
-                     # 'FUEL_lpg', 
-                     # 'FUEL_kerosene',
+                     'FUEL_lpg', 
+                     'FUEL_kerosene',
+                     'FUEL_thinner',
                      'DISTANCE','DESIBEL','AIRFLOW','FREQUENCY']
 
 TRAINED_MODEL_DIR = './models/'
@@ -40,7 +44,7 @@ PIPELINE_SAVE_FILE = f'{PIPELINE_NAME}_output.pkl'
 if __name__ == "__main__":
     
     print(os.getcwd())
-    os.chdir('FAE')
+    os.chdir('C:/Users/rbernal/Documents/GitHub/Proyecto Final/ProyectoFinal/FAE')
     # Retrieve data
     data_retriever = DataRetriever(URL, DATASETS_DIR)
     result = data_retriever.retrieve_data()

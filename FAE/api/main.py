@@ -20,9 +20,11 @@ async def healthcheck():
 
 @app.post('/predict')
 def extract_name(fire_features: Fire):
-    predictor = ModelPredictor('FAE/models/logistic_regression_output.pkl')
+    predictor = ModelPredictor('C:/Users/rbernal/Documents/GitHub/Proyecto Final/ProyectoFinal/FAE/models/logistic_regression_output.pkl')
     X = [fire_features.SIZE,
-         fire_features.FUEL,
+         fire_features.FUEL_gasoline,
+         fire_features.FUEL_lpg,
+         fire_features.FUEL_kerosene,
          fire_features.DISTANCE,
          fire_features.DESIBEL,
          fire_features.AIRFLOW,

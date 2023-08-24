@@ -6,15 +6,14 @@ import pytest
 import pandas as pd
 
 from sklearn.pipeline import Pipeline
-
 from load.load_data import DataRetriever
 from preprocess.preprocess_data import OneHotEncoder
 
 def test_one_hot_encoder_transform():
     """
-    Test the `transform` method of the MissingIndicator transformer.
+    Test the `transform` method of the One hot encoder transformer.
 
-    This test checks if the transformer correctly adds indicator features for missing values
+    This test checks if the transformer correctly adds indicator features for categorical values
     in the specified variables and returns the modified DataFrame.
 
     The test case uses a sample DataFrame with missing values and a custom transformer instance.
@@ -22,9 +21,9 @@ def test_one_hot_encoder_transform():
     It checks if the transformer successfully adds indicator features for the specified variables,
     and the transformed DataFrame has the expected additional columns.
 
-    Note: Make sure to replace 'your_module' with the actual module name where the MissingIndicator class is defined.
+    Note: Make sure to replace 'your_module' with the actual module name where the OneHotEncoder class is defined.
     """
-    # Sample DataFrame with missing values
+    # Sample DataFrame with categorical values
     data = {
         'FUEL': ['gasoline', 'kerosene', 'thinner']
     }
